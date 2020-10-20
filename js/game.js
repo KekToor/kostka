@@ -57,13 +57,20 @@ function audio2(){
         zvuk.pause();
     },8000);
 }
+function audio3(){
+    var zvuk = document.getElementById('sadEmoji');
+    zvuk.volume = 1;
+    zvuk.currentTime = 0;
+    zvuk.play();
+    window.setTimeout(function(){
+        zvuk.pause();
+    },15000);
+}
 
 function hod() {
-    var nahodneCislo; 
     var obrazek = ["img/kostka1.png","img/kostka2.png","img/kostka3.png","img/kostka4.png","img/kostka5.png","img/kostka6.png"];
     let Interval1 = window.setInterval(function(){
-        nahodneCislo = Math.floor(Math.random()*obrazek.length);
-        document.getElementById('cube').src = obrazek[nahodneCislo];
+        document.getElementById('cube').src = obrazek[Math.floor(Math.random()*obrazek.length)];
     },150)
     window.setTimeout(function(){
         window.clearInterval(Interval1);
@@ -77,8 +84,11 @@ function hod() {
         if(h==6){
             audio2();
         }
+        else if(h==1){
+            audio3();
+        }
         document.getElementById('cube').src='img/kostka' + h + '.png';
-        document.getElementById('result').innerHTML = '<p>Hod: ' + h + '</p>';
+        document.getElementById('result').innerHTML = '<p></p><p>Hod: ' + h + '</p>';
         document.getElementById('result').innerHTML += 
             '<p>Počet hodů: ' + hody.length + '</p>';
         document.getElementById('result').innerHTML += 
