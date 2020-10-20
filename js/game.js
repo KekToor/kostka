@@ -101,7 +101,7 @@ function hod() {
         if(h==6){
             audio2();
         }
-        else if(h<6){
+        else if(h==1){
             audio3();
         }
         document.getElementById('cube').src='img/kostka' + h + '.png';
