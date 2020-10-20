@@ -137,7 +137,7 @@ function hod() {
         document.getElementById('result2').innerHTML += 
             ' Nejvyšší hod: ' + maximum(hody); + ' ';
         document.getElementById('result2').innerHTML += 
-            ' Nejvyšší hod: ' + minimum(hody) + ' ';
+            ' Nejnižší hod: ' + minimum(hody) + ' ';
         document.getElementById('result2').innerHTML += 
             '<br>';    
         return h;
