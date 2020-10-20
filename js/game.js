@@ -41,47 +41,47 @@ function average(sum, count) {
 }
 
 function audio(){
-    if(Math.floor(Math.random()*2)==1){
     var zvuk = document.getElementById('diceRoll');
     zvuk.currentTime = 0;
     zvuk.play();
     window.setTimeout(function(){
         zvuk.pause();
     },3000);
-    }
 }
 
 function audio2(){
-    var zvuk = document.getElementById('ezClap');
-    zvuk.volume = 0.2;
-    zvuk.currentTime = 0;
-    zvuk.play();
-    window.setTimeout(function(){
-        zvuk.pause();
-    },8000);
+    if(Math.floor(Math.random()*2)==1){
+        var zvuk = document.getElementById('ezClap');
+        zvuk.volume = 0.2;
+        zvuk.currentTime = 0;
+        zvuk.play();
+        window.setTimeout(function(){
+            zvuk.pause();
+        },8000);
+    }
 }
 function audio3(){
     if(Math.floor(Math.random()*5)==1){
         var zvuk = document.getElementById('sadEmoji');
-    let pozadi= document.querySelector('body');
-    window.setTimeout(function(){
-        pozadi.style.backgroundImage = 'url("img/cat.jpg")';
-        pozadi.style.backgroundRepeat = 'no-repeat';
-        pozadi.style.backgroundSize = 'cover';
-        pozadi.style.color = 'white'
-        mizeni.hidden = true;
-    },3000)
-    zvuk.volume = 1;
-    zvuk.currentTime = 0;
-    zvuk.play();
-    window.setTimeout(function(){
-        zvuk.pause();
-    },14500);
-    window.setTimeout(function(){
-        pozadi.style.backgroundImage = '';
-        mizeni.hidden = false;
-        pozadi.style.color = 'black';
-    },14500)
+        let pozadi= document.querySelector('body');
+        window.setTimeout(function(){
+            pozadi.style.backgroundImage = 'url("img/cat.jpg")';
+            pozadi.style.backgroundRepeat = 'no-repeat';
+            pozadi.style.backgroundSize = 'cover';
+            pozadi.style.color = 'white'
+            mizeni.hidden = true;
+        },3000)
+        zvuk.volume = 1;
+        zvuk.currentTime = 0;
+        zvuk.play();
+        window.setTimeout(function(){
+            zvuk.pause();
+        },14500);
+        window.setTimeout(function(){
+            pozadi.style.backgroundImage = '';
+            mizeni.hidden = false;
+            pozadi.style.color = 'black';
+        },14500)
     }
     
 }
