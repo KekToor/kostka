@@ -41,12 +41,14 @@ function average(sum, count) {
 }
 
 function audio(){
+    if(Math.floor(Math.random()*2)==1){
     var zvuk = document.getElementById('diceRoll');
     zvuk.currentTime = 0;
     zvuk.play();
     window.setTimeout(function(){
         zvuk.pause();
     },3000);
+    }
 }
 
 function audio2(){
