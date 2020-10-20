@@ -1,0 +1,35 @@
+.sixem{
+    font-size: 6em;
+}
+.twoem{
+    font-size: 1.5em;
+}
+.onethreeem{
+    font-size: 1.3em;
+}
+.fixed.top{
+    position: fixed top;
+    top:0 !important; 
+}
+.footer{
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    color: white;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    background-color: rgb(8, 53, 95);
+}
+.jumbotron{
+    background-color:rgb(8, 53, 95);
+    color:white;
+}
+.flexible {
+        position:absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        z-index: -999;
+        top: 0;
+        left: 0;
+      }

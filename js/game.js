@@ -1,6 +1,7 @@
 var hody = [];
 var cudlik;
 cudlik=document.getElementById('game');
+let mizeni = document.getElementById('zmiz');
 
 document.getElementById('game').addEventListener('click',
     function(){
@@ -58,13 +59,29 @@ function audio2(){
     },8000);
 }
 function audio3(){
-    var zvuk = document.getElementById('sadEmoji');
+    if(Math.floor(Math.random()*5)==1){
+        var zvuk = document.getElementById('sadEmoji');
+    let pozadi= document.querySelector('body');
+    window.setTimeout(function(){
+        pozadi.style.backgroundImage = 'url("img/cat.jpg")';
+        pozadi.style.backgroundRepeat = 'no-repeat';
+        pozadi.style.backgroundSize = 'cover';
+        pozadi.style.color = 'white'
+        mizeni.hidden = true;
+    },3000)
     zvuk.volume = 1;
     zvuk.currentTime = 0;
     zvuk.play();
     window.setTimeout(function(){
         zvuk.pause();
-    },15000);
+    },14500);
+    window.setTimeout(function(){
+        pozadi.style.backgroundImage = '';
+        mizeni.hidden = false;
+        pozadi.style.color = 'black';
+    },14500)
+    }
+    
 }
 
 function hod() {
@@ -84,7 +101,7 @@ function hod() {
         if(h==6){
             audio2();
         }
-        else if(h==1){
+        else if(h<6){
             audio3();
         }
         document.getElementById('cube').src='img/kostka' + h + '.png';
@@ -98,10 +115,10 @@ function hod() {
         document.getElementById('result').innerHTML += 
             '<p>Nejvyšší hod: ' + maximum(hody) + '</p>';
         document.getElementById('result').innerHTML += 
-            '<p>Nejvyšší hod: ' + minimum(hody) + '</p>';
+            '<p>Nejnižší hod: ' + minimum(hody) + '</p>';
             if(h==1){
                 document.getElementById('result').innerHTML += 
-                'Ehm...';
+                'Ehm... :-(';
             }
             if(h==6){
                 document.getElementById('result').innerHTML += 
