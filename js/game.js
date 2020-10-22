@@ -1,6 +1,8 @@
-var hody = [];
-var cudlik;
-cudlik=document.getElementById('game');
+let hody = [];
+const kostka = document.getElementById('cube')
+const cudlik = document.getElementById('game');;
+const statistika = document.getElementById('result');
+const statistika2 = document.getElementById('result2');
 let mizeni = document.getElementById('zmiz');
 
 document.getElementById('game').addEventListener('click',
@@ -52,12 +54,12 @@ function audio(){
 function audio2(){
     if(Math.floor(Math.random()*2)==1){
         var zvuk = document.getElementById('ezClap');
-        zvuk.volume = 0.2;
+        zvuk.volume = 0.5;
         zvuk.currentTime = 0;
         zvuk.play();
         window.setTimeout(function(){
             zvuk.pause();
-        },8000);
+        },15000);
     }
 }
 function audio3(){
@@ -87,9 +89,9 @@ function audio3(){
 }
 
 function hod() {
-    var obrazek = ["img/kostka1.png","img/kostka2.png","img/kostka3.png","img/kostka4.png","img/kostka5.png","img/kostka6.png"];
+    let obrazek = ["img/kostka1.png","img/kostka2.png","img/kostka3.png","img/kostka4.png","img/kostka5.png","img/kostka6.png"];
     let Interval1 = window.setInterval(function(){
-        document.getElementById('cube').src = obrazek[Math.floor(Math.random()*obrazek.length)];
+        kostka.src = obrazek[Math.floor(Math.random()*obrazek.length)];
     },150)
     window.setTimeout(function(){
         window.clearInterval(Interval1);
@@ -106,17 +108,17 @@ function hod() {
         else if(h==1){
             audio3();
         }
-        document.getElementById('cube').src='img/kostka' + h + '.png';
-        document.getElementById('result').innerHTML = '<p></p><p>Hod: ' + h + '</p>';
-        document.getElementById('result').innerHTML += 
+        kostka.src='img/kostka' + h + '.png';
+        statistika.innerHTML = '<p></p><p>Hod: ' + h + '</p>';
+        statistika.innerHTML += 
             '<p>Počet hodů: ' + hody.length + '</p>';
-        document.getElementById('result').innerHTML += 
+        statistika.innerHTML += 
             '<p>Součet hodů: ' + suma(hody) + '</p>';
-        document.getElementById('result').innerHTML += 
+        statistika.innerHTML += 
             '<p>Průměr hodů: ' + average(suma(hody),hody.length) + '</p>';
-        document.getElementById('result').innerHTML += 
+        statistika.innerHTML += 
             '<p>Nejvyšší hod: ' + maximum(hody) + '</p>';
-        document.getElementById('result').innerHTML += 
+        statistika.innerHTML += 
             '<p>Nejnižší hod: ' + minimum(hody) + '</p>';
             if(h==1){
                 document.getElementById('result').innerHTML += 
@@ -126,19 +128,19 @@ function hod() {
                 document.getElementById('result').innerHTML += 
                 'Nice One!';
             }
-        document.getElementById('result2').innerHTML +=
+        statistika2.innerHTML +=
             ' Počet hodů: <b>' + hody.length; + '</b>' + ' ';
-        document.getElementById('result2').innerHTML += 
+        statistika2.innerHTML += 
             ' Hod: ' + h ;
-        document.getElementById('result2').innerHTML += 
+        statistika2.innerHTML += 
             ' Součet hodů: ' + suma(hody); + ' ';
-        document.getElementById('result2').innerHTML += 
+        statistika2.innerHTML += 
             ' Průměr hodů: ' + average(suma(hody),hody.length); + ' ';
-        document.getElementById('result2').innerHTML += 
+        statistika2.innerHTML += 
             ' Nejvyšší hod: ' + maximum(hody); + ' ';
-        document.getElementById('result2').innerHTML += 
+        statistika2.innerHTML += 
             ' Nejnižší hod: ' + minimum(hody) + ' ';
-        document.getElementById('result2').innerHTML += 
+        statistika2.innerHTML += 
             '<br>';    
         return h;
     },3000)
